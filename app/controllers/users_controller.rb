@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_actuion :require_user_logged_in, only: [:index, :show]
+  
   def index
     @users = User.order(id: :desc).page(params[:page]).per(25)
   end
@@ -16,7 +18,7 @@ class UsersController < ApplicationController
     
     if @user.save
       flash[:success] = '新規登録が完了しました'
-      redirect_to root_path
+      redirect_to root_url
     else
       flash.now[:danger] = '新規登録に失敗しました'
       render :new
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     flash[:success] = 'ユーザーを削除しました。'
-    redirect_to root_path
+    redirect_to root_url
   end
   
   private
