@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   
   get 'signup', to: 'users#new'
   resources :users, except: [:new]
+  
+  resources :tweets, only: [:show, :create, :new, :edit, :update, :destroy]
 end

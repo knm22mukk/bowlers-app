@@ -1,0 +1,16 @@
+<h1>Tweet詳細ページ</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>タイトル</th>
+    <td><%= @tweet.title %></td>
+  </tr>
+  <tr>
+    <th>投稿</th>
+    <td><%= @tweet.content %></td>
+  </tr>
+</table>
+
+<%= link_to '編集する', edit_tweet_path(@tweet), class: "btn btn-primary" %>
+<%= link_to '削除する', @tweet, method: :delete, data: {confirm: '本当に削除してよろしいですか？'}, class: "btn btn-danger" %>
+<%= link_to 'トップに戻る', "/", class: "btn btn-info" %>
