@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_082359) do
+ActiveRecord::Schema.define(version: 2021_03_24_134350) do
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 2021_03_20_082359) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image"
+    t.string "dominant_arm"
+    t.boolean "admin", default: false
+    t.string "introduce"
   end
 
   add_foreign_key "tweets", "users"

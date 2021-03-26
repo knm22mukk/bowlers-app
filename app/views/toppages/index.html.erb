@@ -1,5 +1,59 @@
 <% if logged_in? %>
   <%= render 'tweets/tweets', tweets: @tweets %>
 <% else %>
-  <h1>ログイン前のトップページ</h1>
+  <main class="container" role="main">
+    <section class="jumbotron mb-5">
+      <h1 class="display-3">BowlersApp.</h1>
+      <p class="lead text-muted">ボウリングをもっと楽しもう！</p>
+      <p>
+        <%= link_to '新規登録', signup_path, class: 'btn btn-primary my-2' %>
+        <%= link_to 'ログイン', login_path, class: 'btn btn-primary my-2' %>
+      </p>
+    </section>
+    
+    <div class="row featurette">
+      <div class="col-md-6 text-right">
+        <h2 class="featurette-heading">発信しよう</h2>
+        <p class="lead">文章を記載します。</p>
+      </div>
+      <div class="col-sm-6">
+        <img class="featurette-image img-fluid mx-auto" data-src="#" alt="500x500" style="width: 300px; height: 300px;" src="/assets/illust02.jpg" data-holder-rendered="true">
+      </div>
+    </div>
+    
+    <hr class="featurette-divider">
+    
+    <div class="row featurette">
+      <div class="col-md-6 text-left order-md-2">
+        <h2 class="featurette-heading">発信しよう</h2>
+        <p class="lead">文章を記載します。</p>
+      </div>
+      <div class="col-sm-6 order-md-1 text-right">
+        <img class="featurette-image img-fluid mx-auto" data-src="#" alt="500x500" style="width: 300px; height: 300px;" src="assets/illust01.jpg" data-holder-rendered="true">
+      </div>
+    </div>
+    
+    <hr class="featurette-divider">
+    
+    <div class="row featurette">
+      <div class="col-md-6 text-right">
+        <h2 class="featurette-heading">発信しよう</h2>
+        <p class="lead">文章を記載します。</p>
+      </div>
+      <div class="col-sm-6">
+        <img class="featurette-image img-fluid mx-auto" data-src="#" alt="500x500" style="width: 300px; height: 300px;" src="assets/illust03.jpg" data-holder-rendered="true">
+      </div>
+    </div>
+    
+     <hr class="featurette-divider">
+     
+     <div class="jumbotron text-center">
+      <h4>いますぐはじめよう！</h4>
+      <p>
+        <%= link_to '新規登録', signup_path, class: 'btn btn-primary my-2' %>
+        <%= link_to 'ログイン', login_path, class: 'btn btn-primary my-2' %>
+      </p>
+    </div>
+     
+  </main>
 <% end %>

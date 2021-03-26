@@ -12,10 +12,27 @@
         <%= f.label :name, '名前' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
-
+      
       <div class="form-group">
         <%= f.label :email, 'メールアドレス' %>
         <%= f.email_field :email, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :image, 'プロフィール画像' %>
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= f.label :introduce, 'プロフィール' %>
+        <%= f.text_area :introduce, class: "form-control", rows: 5 %>
+      </div>
+
+      <div class="form-group">
+        <%= f.radio_button :dominant_arm, :right %>
+        <%= f.label :dominant_arm, "右投げ", {value: :right, style: "display: inline-block;"} %>
+        <%= f.radio_button :dominant_arm, :left %>
+        <%= f.label :dominant_arm, "左投げ", {value: :left, style: "display: inline-block;"} %>
       </div>
 
       <div class="form-group">

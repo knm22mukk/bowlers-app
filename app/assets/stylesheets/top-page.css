@@ -1,0 +1,13 @@
+.jumbotron {
+  background: url(top_picture.jpg);
+	background-size: cover;
+	height: 500px;
+}
+
+.display-3 {
+  color: #fff;
+}
+
+.jumbotron h4 {
+  color: #fff;
+}

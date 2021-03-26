@@ -6,5 +6,9 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   
+  mount_uploader :image, ImageUploader
+  
+  validates :introduce, presence: true, length: { maximum: 255 }
+  
   has_many :tweets
 end

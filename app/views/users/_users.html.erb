@@ -1,12 +1,10 @@
 <% if users.any?%>
-  <div class="card-deck">
+  <div class="row">
     <% users.each do |user| %>
-      <div class="card">
-        <img class="card-img-top" src="<%= gravatar_url(user, { size: 50 }) %>" alt="">
-        <div class="card-block">
-          <h4 class="card-title"><%= link_to user.name, user_path(user) %></h4>
-          <p class="card-text">プロフィール本文がここに来るようにあとから設定します。</p>
-        </div>
+      <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 card p-3 m-1">
+        <img class="rounded-circle" src="<%= gravatar_url(user, { size: 100 }) %>" alt="" style="width:50px;">
+        <h2><%= link_to user.name, user_path(user) %></h2>
+        <p>後からプロフィールの表示に変更します。</p>
       </div>
     <% end %>
   </div>

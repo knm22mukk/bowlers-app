@@ -1,15 +1,18 @@
-<h1>Tweet詳細ページ</h1>
+<h1><%= @tweet.title %></h1>
 
-<table class="table table-bordered">
-  <tr>
-    <th>タイトル</th>
-    <td><%= @tweet.title %></td>
-  </tr>
-  <tr>
-    <th>投稿</th>
-    <td><%= @tweet.content %></td>
-  </tr>
-</table>
+<div class="media flex-column flex-md-row">
+  <div class="media-left mb-3 mb-xl-4 mr-xl-4 ml-xl-4 rounded mx-auto">
+    <img class="mr-2 rounded" src="<%= gravatar_url(@tweet.user, { size: 100 }) %>" alt="">
+    <h4 class="media-heading mt-3"><%= link_to @tweet.user.name, user_path(@tweet.user) %></h4>
+    <h5 class="media-heading mt-3">フォローボタン</h5>
+  </div>
+  <div class="media-body mb-4">
+    <p><%= @tweet.content %></p>
+    <p>ここに投稿した画像が表示されるように後から追加します。</p>
+    <small>posted at <%= @tweet.created_at.to_s(:datetime_jp) %></small>
+    <p>お気に入りボタン</p>
+  </div>
+</div>
 
 <%= link_to '編集する', edit_tweet_path(@tweet), class: "btn btn-primary" %>
 <%= link_to '削除する', @tweet, method: :delete, data: {confirm: '本当に削除してよろしいですか？'}, class: "btn btn-danger" %>
