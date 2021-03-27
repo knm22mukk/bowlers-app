@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :users, except: [:new]
   
   resources :tweets, only: [:show, :create, :new, :edit, :update, :destroy]
+  
+  resources :balls
 end
