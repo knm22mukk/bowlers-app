@@ -4,7 +4,8 @@
       <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 card p-3 m-1">
         <img class="rounded-circle" src="<%= gravatar_url(user, { size: 100 }) %>" alt="" style="width:50px;">
         <h2><%= link_to user.name, user_path(user) %></h2>
-        <p>後からプロフィールの表示に変更します。</p>
+        <p><%= user.introduce %></p>
+        <%= render 'relationships/follow_button', user: user %>
       </div>
     <% end %>
   </div>

@@ -31,7 +31,7 @@ class TweetsController < ApplicationController
       redirect_to root_url
     else
       flash.now[:danger] = '投稿に失敗しました。'
-      render :new
+      redirect_to :new
     end
   end
 

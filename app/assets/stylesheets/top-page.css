@@ -1,4 +1,4 @@
-.jumbotron {
+.top-picture {
   background: url(top_picture.jpg);
 	background-size: cover;
 	height: 500px;
@@ -8,6 +8,6 @@
   color: #fff;
 }
 
-.jumbotron h4 {
+.top-p {
   color: #fff;
 }
