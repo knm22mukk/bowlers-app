@@ -8,7 +8,7 @@ class User < ApplicationRecord
   
   mount_uploader :image, ImageUploader
   
-  validates :introduce, presence: true, length: { maximum: 255 }
+  validates :introduce, length: { maximum: 255 }
   
   has_many :tweets
   

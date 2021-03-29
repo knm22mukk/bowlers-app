@@ -1,10 +1,10 @@
 <div class="row">
   <% tweets.each do |tweet| %>
     <div class="col-md-4 text-center">
-      <% if current_user.image? %>
-        <%= image_tag current_user.image.url, class: "card-img-top" %>
+      <% if tweet.user.image? %>
+        <%= image_tag tweet.user.image.url, class: "card-img-top" %>
       <% else %>
-        <img class="card-img-top" src="<%= gravatar_url(@user) %>" alt="">
+        <img class="card-img-top" src="<%= gravatar_url(tweet.user) %>" alt="">
       <% end %>
       <h4 class="media-heading mt-3"><%= link_to tweet.user.name, user_path(tweet.user) %></h4>
     </div>
