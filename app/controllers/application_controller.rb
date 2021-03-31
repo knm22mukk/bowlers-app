@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
     @count_tweets = user.tweets.count
     @count_followings = user.followings.count
     @count_followers = user.followers.count
+    @count_favtweets = user.favtweets.count
+    @count_favballs = user.favballs.count
   end
   
   private

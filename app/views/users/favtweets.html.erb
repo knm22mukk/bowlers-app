@@ -22,6 +22,6 @@
       <li class="nav-item"><a href="<%= favtweets_user_path(@user) %>" class="nav-link  <%= 'active' if current_page?(favtweets_user_path(@user)) %>">いいね投稿  <span class="badge badge-secondary"><%= @count_favtweets %></span></a></li>
       <li class="nav-item"><a href="<%= favballs_user_path(@user) %>" class="nav-link  <%= 'active' if current_page?(favballs_user_path(@user)) %>">お気に入りボール  <span class="badge badge-secondary"><%= @count_favballs %></span></a></li>
     </ul>
-    <%= render 'users', users: @followings %>
+    <%= render 'tweets/tweets', tweets: @favtweets %>
   </div>
 </div>

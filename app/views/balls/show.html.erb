@@ -25,6 +25,7 @@
         <td><%= @ball.memo %></td>
       </tbody>
     </table>
+    <%= render 'ball_favorites/favball_button', ball: @ball %>
   </div>
 </div>
 <%= link_to '編集する', edit_ball_path(@ball), class: "btn btn-primary" %>

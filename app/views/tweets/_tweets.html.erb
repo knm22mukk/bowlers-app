@@ -15,9 +15,9 @@
         <p class="card-text"><%= tweet.content %></p>
         <img class="card-img-bottom" src="<%= tweet.image.url if tweet.image? %>" alt="">
         <p class="card-text"><small class="text-muted">posted at <%= tweet.created_at.to_s(:datetime_jp) %></small></p>
+        <%= render 'tweet_favorites/favtweet_button', tweet: tweet %>
       </div>
     </div>
-    
     <hr class="mt-3" width="100%">
   <% end %>
   <%= paginate tweets %>

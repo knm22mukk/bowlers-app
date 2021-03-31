@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_28_063531) do
+ActiveRecord::Schema.define(version: 2021_03_31_132828) do
+
+  create_table "ball_favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "ball_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ball_id"], name: "index_ball_favorites_on_ball_id"
+    t.index ["user_id"], name: "index_ball_favorites_on_user_id"
+  end
 
   create_table "balls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -32,6 +41,16 @@ ActiveRecord::Schema.define(version: 2021_03_28_063531) do
     t.index ["follow_id"], name: "index_relationships_on_follow_id"
     t.index ["user_id", "follow_id"], name: "index_relationships_on_user_id_and_follow_id", unique: true
     t.index ["user_id"], name: "index_relationships_on_user_id"
+  end
+
+  create_table "tweet_favorites", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "tweet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["tweet_id"], name: "index_tweet_favorites_on_tweet_id"
+    t.index ["user_id", "tweet_id"], name: "index_tweet_favorites_on_user_id_and_tweet_id", unique: true
+    t.index ["user_id"], name: "index_tweet_favorites_on_user_id"
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -56,7 +75,11 @@ ActiveRecord::Schema.define(version: 2021_03_28_063531) do
     t.string "introduce"
   end
 
+  add_foreign_key "ball_favorites", "balls"
+  add_foreign_key "ball_favorites", "users"
   add_foreign_key "relationships", "users"
   add_foreign_key "relationships", "users", column: "follow_id"
+  add_foreign_key "tweet_favorites", "tweets"
+  add_foreign_key "tweet_favorites", "users"
   add_foreign_key "tweets", "users"
 end
