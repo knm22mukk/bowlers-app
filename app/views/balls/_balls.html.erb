@@ -2,7 +2,7 @@
   <% balls.each do |ball| %>
     <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mr-3">
       <div class="card" style="width: 18rem;">
-        <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Image cap"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+        <%= image_tag ball.image.url if ball.image? %>
         <div class="card-body">
           <h5 class="card-title">ボール名：<%= link_to ball.name, ball_path(ball) %></h5>
           <p class="card-text">メーカー名：<%= ball.brand %></p>
@@ -14,4 +14,6 @@
     </div>
   <% end %>
 </div>
-<%= link_to 'ボール登録', new_ball_path, class: 'btn btn-primary mt-5' %>
+<% if current_user.admin? %>
+  <%= link_to 'ボール登録', new_ball_path, class: 'btn btn-primary mt-5' %>
+<% end %>

@@ -7,6 +7,7 @@
         <img class="card-img-top" src="<%= gravatar_url(tweet.user) %>" alt="">
       <% end %>
       <h4 class="media-heading mt-3"><%= link_to tweet.user.name, user_path(tweet.user) %></h4>
+      <%= render 'relationships/follow_button', user: tweet.user %>
     </div>
     
     <div class="card col-sm-8 text-center">

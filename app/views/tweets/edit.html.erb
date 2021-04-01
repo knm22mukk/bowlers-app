@@ -1,8 +1,4 @@
-<h1>投稿編集ページ</h1>
-
-<div class=row>
-  <div class="col-6">
-    <%= form_with(model: @tweet, local: true) do |f| %>
+<%= form_with(model: @tweet, local: true) do |f| %>
       <% if @tweet.errors.any? %>
         <div id="error_explanation" class="alert alert-warning">
           <ul class="mb-0">
@@ -23,8 +19,13 @@
         <%= f.text_area :content, class: "form-control", rows: 5 %>
       </div>
       
+      <div class="form-group">
+        <%= f.label :image, '画像' %>
+        <%= f.file_field :image, class: 'form-control' %>
+      </div>
+      
       <%= f.submit '編集完了', class: "btn btn-primary" %>
-      <%= link_to 'キャンセル', tweet_path, class: "btn btn-info" %>
+      <%= link_to 'キャンセル', "/", class: "btn btn-info" %>
     <% end %>
   </div>
 </div>

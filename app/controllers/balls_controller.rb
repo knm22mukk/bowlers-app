@@ -40,9 +40,10 @@ class BallsController < ApplicationController
   end
 
   def destroy
+    @ball = Ball.find(params[:id])
     @ball.destroy
     flash[:success] = 'ボールを削除しました。'
-    redirect_to ball_path
+    redirect_to @ball
   end
   
   private
