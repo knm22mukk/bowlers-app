@@ -1,7 +1,7 @@
 <div class="row">
   <% balls.each do |ball| %>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 mr-3">
-      <div class="card" style="width: 18rem;">
+    <div class="col-md-4 col-sm-6 col-xs-12 p-2 m-1">
+      <div class="card">
         <%= image_tag ball.image.url if ball.image? %>
         <div class="card-body">
           <h5 class="card-title">ボール名：<%= link_to ball.name, ball_path(ball) %></h5>
