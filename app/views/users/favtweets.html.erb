@@ -10,7 +10,7 @@
       <div class="card mb-3">
         <div class="card-header"><%= @user.name %></div>
         <div class="card-body text-secondary">
-          <p class="card-text"><%= @user.introduce %></p>
+          <p class="card-text"><%= simple_format(@user.introduce) %></p>
         </div>
         <% if @user.id == current_user.id %>
           <%= link_to '編集する', edit_user_path(@user), class: "btn btn-primary mt-2" %>

@@ -1,4 +1,14 @@
 <% if logged_in? %>
+  <main　class="container">
+    <div class="jumbotron">
+      <h1>さっそく始めよう！！</h1>
+      <p class="lead">友達をフォローしたり、投稿したりどんどんやってみよう！</p>
+       <p>
+        <%= link_to '新規投稿', new_tweet_path, class: 'btn btn-primary my-2' %>
+        <%= link_to 'ユーザー一覧', users_path, class: 'btn btn-primary my-2' %>
+      </p>
+    </div>
+  </main>
   <%= render 'tweets/tweets', tweets: @tweets %>
 <% else %>
   <main class="container">

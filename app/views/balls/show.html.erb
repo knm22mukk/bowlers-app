@@ -1,5 +1,5 @@
 <div class="card mb-4 p-3 shadow-sm">
-  <%= image_tag @ball.image.url, alt: "ball_image" %>
+  <%= image_tag @ball.image.url, alt: "ball_image", class: "card-img-top w-50" %>
   <div class="card-body">
     <table class="table table-striped table-bordered">
       <thead>
@@ -19,11 +19,11 @@
         </tr>
         <tr>
           <td>特　徴</td>
-          <td><%= @ball.content %></td>
+          <td><%= simple_format(@ball.content) %></td>
         </tr>
         <tr>
           <td>備　考</td>
-          <td><%= @ball.memo %></td>
+          <td><%= simple_format(@ball.memo) %></td>
         </tr>
       </tbody>
     </table>
