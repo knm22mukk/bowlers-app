@@ -2,9 +2,9 @@
   <% tweets.each do |tweet| %>
     <div class="col-md-4 text-center">
       <% if tweet.user.image? %>
-        <%= image_tag tweet.user.image.url, alt: "user_icon", class: "card-img-top" %>
+        <%= image_tag tweet.user.image.url, alt: "user_icon", class: "card-img-top w-50" %>
       <% else %>
-        <img class="card-img-top" src="<%= gravatar_url(tweet.user) %>" alt="user icon">
+        <img class="card-img-top w-50" src="<%= gravatar_url(tweet.user) %>" alt="user icon">
       <% end %>
       <h4 class="media-heading mt-3"><%= link_to tweet.user.name, user_path(tweet.user) %></h4>
       <%= render 'relationships/follow_button', user: tweet.user %>
@@ -14,7 +14,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= link_to tweet.title, tweet %></h5>
         <p class="card-text"><%= simple_format(tweet.content) %></p>
-        <%= image_tag tweet.image.url, class: "card-img-bottom", alt: "tweet_image" if tweet.image? %>
+        <%= image_tag tweet.image.url, class: "card-img-bottom w-75", alt: "tweet_image" if tweet.image? %>
         <p class="card-text"><small class="text-muted">posted at <%= tweet.created_at.to_s(:datetime_jp) %></small></p>
         <%= render 'tweet_favorites/favtweet_button', tweet: tweet %>
       </div>

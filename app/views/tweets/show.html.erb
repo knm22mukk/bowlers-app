@@ -3,8 +3,8 @@
 <div class="card text-center">
   <div class="card-body">
     <h5 class="card-title"><%= link_to @tweet.title, @tweet %></h5>
-    <p class="card-text"><%= @tweet.content %></p>
-    <img class="card-img-bottom" src="<%= @tweet.image.url if @tweet.image? %>" alt="">
+    <p class="card-text"><%= simple_format(@tweet.content) %></p>
+    <%= image_tag @tweet.image.url, class: "card-img-bottom w-50", alt: "tweet_image" if @tweet.image? %>
     <p class="card-text"><small class="text-muted">posted at <%= @tweet.created_at.to_s(:datetime_jp) %></small></p>
     <%= render 'tweet_favorites/favtweet_button', tweet: @tweet %>
   </div>
