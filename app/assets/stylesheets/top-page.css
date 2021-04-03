@@ -2,12 +2,5 @@
   background: url(top_picture.jpg);
 	background-size: cover;
 	height: 500px;
-}
-
-.display-3 {
-  color: #fff;
-}
-
-.top-p {
-  color: #fff;
+	opacity: 0.8;
 }
