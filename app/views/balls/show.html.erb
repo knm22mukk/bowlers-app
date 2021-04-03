@@ -1,11 +1,11 @@
 <div class="card mb-4 p-3 shadow-sm">
-  <%= image_tag @ball.image.url if @ball.image? %>
+  <%= image_tag @ball.image.url, alt: "ball_image" %>
   <div class="card-body">
     <table class="table table-striped table-bordered">
       <thead>
         <tr>
           <th style="width: 150px;">ボール名</th>
-          <th><%= @ball.name %></td>
+          <th><%= @ball.name %></th>
         </tr>
       </thead>
       <tbody>

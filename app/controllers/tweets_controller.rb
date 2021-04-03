@@ -32,14 +32,14 @@ class TweetsController < ApplicationController
     else
       @tweets = current_user.feed_tweets.order(id: :desc).page(params[:page])
       flash.now[:danger] = '投稿に失敗しました。'
-      redirect_to :new
+      render :new
     end
   end
 
   def destroy
     @tweet.destroy
     flash[:success] = '投稿を削除しました。'
-    redirect_to user_path
+    redirect_to root_url
   end
   
   private

@@ -2,9 +2,9 @@
   <aside class="col-sm-4">
     <div class="card">
       <% if @user.image? %>
-        <%= image_tag @user.image.url, class: "card-img-top" %>
+        <%= image_tag @user.image.url, alt: "user_icon", class: "card-img-top" %>
       <% else %>
-        <img class="card-img-top" src="<%= gravatar_url(@user) %>" alt="">
+        <img class="card-img-top" src="<%= gravatar_url(@user) %>" alt="default_icon">
       <% end %>
     </div>  
       <div class="card mb-3">
