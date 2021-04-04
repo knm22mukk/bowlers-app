@@ -3,14 +3,14 @@
     <% users.each do |user| %>
       <div class="col-md-4 col-sm-6 col-xs-12 card p-2 m-1">
         <% if user.image? %>
-          <%= image_tag user.image.url, alt: "user_icon", class: "card-img-top w-50" %>
+          <%= image_tag user.image.url, alt: "user_icon", class: "card-img-top w-50 d-block mx-auto" %>
         <% else %>
-          <img class="card-img-top w-50" src="<%= gravatar_url(user) %>" alt="default_icon">
+          <img class="card-img-top w-50 d-block mx-auto" src="<%= gravatar_url(user) %>" alt="default_icon">
         <% end %>
         <h2><%= link_to user.name, user_path(user) %></h2>
-        <p><%= simple_format(user.introduce) %></p>
+        <%= simple_format(user.introduce) %>
         <%= render 'relationships/follow_button', user: user %>
       </div>
     <% end %>
   </div>
-<% end %>
+<% end %> 

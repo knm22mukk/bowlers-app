@@ -1,11 +1,11 @@
 <% if current_user.favball?(ball) %>
   <%= form_with(model: current_user.ball_favorites.find_by(ball_id: ball.id), local: true, method: :delete) do |f| %>
-    <%= hidden_field_tag :ball_id, ball.id %>
+    <%= hidden_field_tag :ball_id, ball.id, id: "ball_#{ball.id}" %>
     <%= f.submit 'お気に入りを取り消す', class: 'btn btn-danger btn-sm' %>
   <% end %>
 <% else %>
   <%= form_with(model: current_user.ball_favorites.build, local: true) do |f| %>
-    <%= hidden_field_tag :ball_id, ball.id %>
+    <%= hidden_field_tag :ball_id, ball.id, id: "ball_#{ball.id}" %>
     <%= f.submit 'お気に入りする', class: 'btn btn-primary btn-sm' %>
   <% end %>
 <% end %>
