@@ -3,7 +3,7 @@
   <div class="row no-gutters">
     <div class="col-md-4 pt-3">
       <% if tweet.user.image? %>
-        <%= image_tag tweet.user.image.url, alt: "user_icon", class: "card-img-left w-50 d-block mx-auto" %>
+        <%= image_tag tweet.user.image.url, size: '200x200', alt: "user_icon", class: "card-img-left w-50 d-block mx-auto" %>
       <% else %>
         <img class="card-img-left w-50 d-block mx-auto" src="<%= gravatar_url(tweet.user) %>" alt="user icon">
       <% end %>
@@ -13,7 +13,7 @@
       <div class="card-body">
         <h5 class="card-title"><%= tweet.title %></h5>
         <%= simple_format(tweet.content, class: "card-text") %>
-        <%= image_tag tweet.image.url, class: "card-img-bottom w-75", alt: "tweet_image" if tweet.image? %>
+        <%= image_tag tweet.image.url, class: "card-img-bottom w-75", size: '350x375', alt: "tweet_image" if tweet.image? %>
         <p class="card-text"><small class="text-muted">posted at <%= tweet.created_at.to_s(:datetime_jp) %></small></p>
         <%= render 'tweet_favorites/favtweet_button', tweet: tweet %>
         <% if tweet.user_id == current_user.id %>

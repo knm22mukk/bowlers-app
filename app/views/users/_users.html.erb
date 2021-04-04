@@ -5,7 +5,7 @@
         <div class="card-deck">
           <div class="card">
             <% if user.image? %>
-              <%= image_tag user.image.url, alt: "user_icon", class: "card-img-top w-50 d-block mx-auto mt-3" %>
+              <%= image_tag user.image.url, size: '200x200', alt: "user_icon", class: "card-img-top w-50 d-block mx-auto mt-3" %>
             <% else %>
               <img class="card-img-top w-50 d-block mx-auto mt-3" src="<%= gravatar_url(user) %>" alt="default_icon">
             <% end %>
