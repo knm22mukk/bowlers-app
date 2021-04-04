@@ -3,7 +3,7 @@
   <div class="row no-gutters">
     <div class="col-md-4 pt-3">
       <% if tweet.user.image? %>
-        <%= image_tag tweet.user.image.url, size: '200x200', alt: "user_icon", class: "card-img-left w-50 d-block mx-auto" %>
+        <%= image_tag tweet.user.image.url, alt: "user_icon", class: "card-img-left w-50 d-block mx-auto" %>
       <% else %>
         <img class="card-img-left w-50 d-block mx-auto" src="<%= gravatar_url(tweet.user) %>" alt="user icon">
       <% end %>
