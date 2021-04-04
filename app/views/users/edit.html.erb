@@ -20,7 +20,11 @@
       
       <div class="form-group">
         <%= f.label :image, 'プロフィール画像' %>
-        <%= image_tag @user.image.url, class: "card", :size =>'300x300', alt: "user_image" if @user.image? %>
+        <% if @user.image_cache %>
+          <%= image_tag "/#{@user.image.cache_path}", class: "card", :size =>'300x300', alt: "user_image" %>
+        <% else %>
+          <%= image_tag @user.image.url, class: "card", :size =>'300x300', alt: "user_image" if @user.image? %>
+        <% end %>
         <%= f.file_field :image, class: 'form-control' %>
         <%= f.hidden_field :image_cache %>
       </div>
