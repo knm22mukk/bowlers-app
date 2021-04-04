@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   
-  resources :tweets, only: [:show, :create, :new, :edit, :update, :destroy]
+  resources :tweets, only: [:create, :new, :edit, :update, :destroy]
   resources :tweet_favorites, only: [:create, :destroy]
   
   resources :balls
