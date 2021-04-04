@@ -1,15 +1,21 @@
 <% if users.any?%>
   <div class="row">
     <% users.each do |user| %>
-      <div class="col-md-4 col-sm-6 col-xs-12 card p-2 m-1">
-        <% if user.image? %>
-          <%= image_tag user.image.url, alt: "user_icon", class: "card-img-top w-50 d-block mx-auto" %>
-        <% else %>
-          <img class="card-img-top w-50 d-block mx-auto" src="<%= gravatar_url(user) %>" alt="default_icon">
-        <% end %>
-        <h2><%= link_to user.name, user_path(user) %></h2>
-        <%= simple_format(user.introduce) %>
-        <%= render 'relationships/follow_button', user: user %>
+      <div class="col-12 col-sm-6 col-md-4 mb-3">
+        <div class="card-deck">
+          <div class="card">
+            <% if user.image? %>
+              <%= image_tag user.image.url, alt: "user_icon", class: "card-img-top w-50 d-block mx-auto mt-3" %>
+            <% else %>
+              <img class="card-img-top w-50 d-block mx-auto mt-3" src="<%= gravatar_url(user) %>" alt="default_icon">
+            <% end %>
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to user.name, user_path(user) %></h5>
+              <%= truncate(simple_format(user.introduce), escape: false) %>
+              <%= render 'relationships/follow_button', user: user %>
+            </div>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>
