@@ -16,7 +16,7 @@
     <% if @tweet.image_cache %>
       <%= image_tag "/#{@tweet.image.cache_path}", class: "card", :size =>'300x300', alt: "tweet_image" %>
     <% else %>
-      <%= image_tag @tweet.mage.url, class: "card", :size =>'300x300', alt: "tweet_image" if @tweet.image? %>
+      <%= image_tag @tweet.image.url, class: "card", :size =>'300x300', alt: "tweet_image" if @tweet.image? %>
     <% end %>
     <%= f.file_field :image, class: 'form-control' %>
     <%= f.hidden_field :image_cache %>

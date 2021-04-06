@@ -13,7 +13,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
     if @tweet.update(tweet_params)
       flash[:success] = '投稿を編集しました。'
-      redirect_to @tweet
+      redirect_to root_path
     else
       flash.now[:danger] = '投稿の編集に失敗しました。'
       render :edit
