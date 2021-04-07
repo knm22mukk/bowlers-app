@@ -6,18 +6,16 @@
       <% else %>
         <img class="card-img-top d-block mx-auto" src="<%= gravatar_url(@user) %>" alt="default_icon">
       <% end %>
-    </div>  
-      <div class="card mb-3">
-        <div class="card-header"><%= @user.name %></div>
-        <div class="card-body text-secondary">
-          <%= simple_format(@user.introduce, class: "card-text") %>
-          <%= render "relationships/follow_button", user: @user %>
-        </div>
-        <% if @user.id == current_user.id %>
-          <%= link_to '編集する', edit_user_path(@user), class: "btn btn-primary mt-2" %>
-          <%= link_to 'ログアウト', logout_path, method: :delete, data: {confirm: 'ログアウトしますか？'}, class: "btn btn-danger mt-2" %>
-        <% end %>
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.name %></h5>
+        <p class="card-text"><%= simple_format(@user.introduce, class: "card-text") %></p>
+        <%= render "relationships/follow_button", user: @user %>
       </div>
+      <% if @user.id == current_user.id %>
+        <%= link_to '編集する', edit_user_path(@user), class: "btn btn-primary mt-2" %>
+        <%= link_to 'ログアウト', logout_path, method: :delete, data: {confirm: 'ログアウトしますか？'}, class: "btn btn-danger mt-2" %>
+      <% end %>
+    </div>
   </aside>
   <div class="col-sm-8">
     <ul class="nav nav-tabs mb-3">
