@@ -10,15 +10,16 @@
   <%= render 'tweets/tweets', tweets: @tweets %>
 <% else %>
   <main class="container">
-    <section class="jumbotron mb-5 top-picture text-center">
-      <h1 class="display-3">BowlersApp.</h1>
-      <p class="lead top-p">ボウリングをもっと楽しもう！</p>
-      <p>
-        <%= link_to '新規登録', signup_path, class: 'btn btn-primary my-2' %>
-        <%= link_to 'ログイン', login_path, class: 'btn btn-primary my-2' %>
-      </p>
-    </section>
-    
+    <div class="jumbotron jumbotron-extend">
+      <div class="container jumbotron-container">
+        <h1 class="">BowlersApp.</h1>
+        <p>ボウリングをもっと楽しもう！</p>
+        <p>
+          <%= link_to '新規登録', signup_path, class: 'btn btn-primary my-2' %>
+          <%= link_to 'ログイン', login_path, class: 'btn btn-primary my-2' %>
+        </p>
+      </div>
+    </div>
     <div class="row featurette">
       <div class="col-md-6 text-right">
         <h2 class="featurette-heading">発信しよう</h2>
