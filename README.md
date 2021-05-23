@@ -1,24 +1,37 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## アプリケーション名　　
+「Bowlersapp」　　
 
-Things you may want to cover:
+## アプリケーション概要　　
+ボウリング好きが集まるSNSサイトとなります。　　
 
-* Ruby version
+## 機能一覧　　
+・ユーザー登録、ログイン機能  
+・投稿機能    
+・投稿いいね機能  
+・ユーザーフォロー機能  
+・管理者専用ボール投稿機能  
+・ボールお気に入り機能  
+・ページネーション機能  
 
-* System dependencies
 
-* Configuration
+URL　　
+https://bowlersapp.herokuapp.com/  
+テスト用アカウント  
+メールアドレス： sample@sample.com  
+パスワード 　： sample  
 
-* Database creation
+## 使用した技術  
+Ruby 2.5.3  
+Ruby on Rails 5.2.2  
+MySQL  
+CarrierWave
+Heroku  
+ 
+## 目指した課題解決  
+近年ボウリングは業界として落ち込んでおります。  
+競技人口も減っており、閉店するボウリング場が跡を絶ちません。  
+ボウリングは老若男女誰でも楽しめるスポーツですので今後よりボウリング業界を盛り上げるひとつとして  
+ボウリング関連のアプリケーションの開発を行いました。
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
