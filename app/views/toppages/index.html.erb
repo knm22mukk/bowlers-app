@@ -10,20 +10,11 @@
   <%= render 'tweets/tweets', tweets: @tweets %>
 <% else %>
   <main class="container">
-    <div class="jumbotron jumbotron-extend">
-      <div class="container jumbotron-container">
-        <h1 class="">BowlersApp.</h1>
-        <p>ボウリングをもっと楽しもう！</p>
-        <p>
-          <%= link_to '新規登録', signup_path, class: 'btn btn-primary my-2' %>
-          <%= link_to 'ログイン', login_path, class: 'btn btn-primary my-2' %>
-        </p>
-      </div>
-    </div>
+    <img src="/assets/linkedin_banner_image_1.png" class="img-fluid" alt="bowlersapp">
     <div class="row featurette mt-4">
       <div class="col-md-6 text-right">
         <h2 class="featurette-heading">発信しよう</h2>
-        <p class="lead">Bowlers App はボウラーのための情報共有アプリです！<br>今日のスコア、気になるボールなど<br>色々なことを投稿しよう！<br>登録も簡単、無料で使えます！</p>
+        <p class="lead">Bowlers App はボウラーのための<br>情報共有アプリです！<br>今日のスコア、気になるボールなど<br>色々なことを投稿しよう！<br>登録も簡単、無料で使えます！</p>
       </div>
       <div class="col-sm-6">
         <img class="featurette-image img-fluid mx-auto" data-src="#" alt="500x500" style="width: 300px; height: 300px;" src="/assets/illust02.jpg" data-holder-rendered="true">
@@ -48,7 +39,7 @@
       </div>
     </div>
      <div class="jumbotron text-center mt-4">
-      <h4>いますぐはじめよう！</h4>
+      <h3>いますぐはじめよう！</h3>
       <p>
         <%= link_to '新規登録', signup_path, class: 'btn btn-primary my-2' %>
         <%= link_to 'ログイン', login_path, class: 'btn btn-primary my-2' %>
