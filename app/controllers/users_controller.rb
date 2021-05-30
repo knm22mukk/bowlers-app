@@ -9,6 +9,10 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @tweets = @user.tweets.order(id: :desc).page(params[:page])
+    @followings = @user.followings.page(params[:page])
+    @followers = @user.followers.page(params[:page])
+    @favtweets = @user.favtweets.page(params[:page])
+    @favballs = @user.favballs.page(params[:page])
     counts(@user)
   end
 
@@ -31,24 +35,6 @@ class UsersController < ApplicationController
   def followings
     @user = User.find(params[:id])
     @followings = @user.followings.page(params[:page])
-    counts(@user)
-  end
-  
-  def followers
-    @user = User.find(params[:id])
-    @followers = @user.followers.page(params[:page])
-    counts(@user)
-  end
-  
-  def favtweets
-    @user = User.find(params[:id])
-    @favtweets = @user.favtweets.page(params[:page])
-    counts(@user)
-  end
-  
-  def favballs
-    @user = User.find(params[:id])
-    @favballs = @user.favballs.page(params[:page])
     counts(@user)
   end
 
